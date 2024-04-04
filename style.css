@@ -1,0 +1,86 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.home {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-box {
+  margin-top: 20px;
+}
+
+.btn-box a {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-box a:hover {
+  background-color: #555;
+}
+
+.home-sci {
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin-right: 10px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
