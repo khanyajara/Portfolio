@@ -1,6 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+        /* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: aqua;
+  color: #fff;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.home {
+  text-align: center;
+  padding: 100px 0;
+  background-image: url("C:\Users\mphoj\Pictures\Saved Pictures\assessment 1.jpg");
+  background-size: cover;
+  background-position: center;
+  color: black;
+}
+
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn-box {
+  margin-top: 20px;
+}
+
+.btn-box a {
+ 
+  padding: 10px 20px;
+  background-color:aqua;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-box a:hover {
+  background-color:aquamarine;
+}
+
+.home-sci {
+  margin-top: 20px;
+}
+
+.social-icons {
+  margin-top: 20px;
+  color: whitesmoke;
+}
+
+.social-icon {
+  margin-right: 10px;
+  color:wheat;
+  background-color: transparent;
+}
+
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: red;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.contact-info {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #05525fc9;
+}
+
+.contact-info.show {
+  display: block;
+  top: calc(100% + 5px);
+  left: 0;
+}
+.frame{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khanya Jara - Portfolio</title>
@@ -11,16 +133,16 @@
     <header class="header">
         <a href="#" class="logo">F.INN</a>
         <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html" class="btn-box">About</a>
+            <a href="contact.html" class="btn-box">Contact</a>
         </nav>
     </header>
 
     <section class="home">
         <div class="home-content">
             <h1>Hi, I'm Khanya Jara</h1>
-            <p>Here's some small details about myself. I find technology innovation very interesting and I hope this coding bootcamp will teach me important skills that I can use if I find myself applying for a position as a junior web developer. Also while building this code I ran into a lot of problems.</p>
+            <p class="paragraph">Here's some small details about myself. I find technology innovation very interesting and I hope this coding bootcamp will teach me important skills that I can use if I find myself applying for a position as a junior web developer. Also while building this code I ran into a lot of problems.</p>
             <div class="btn-box">
                 <a href="social.html">Let's Talk</a>
                 <div class="social-icons">
@@ -29,6 +151,19 @@
                     <a href="https://api.whatsapp.com/send?phone=+27764902903" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://www.linkedin.com/in/khanya-jara" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Click on the social media icons below to connect:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/khanya.jara" class="social-icon" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="https://www.instagram.com/ira_da_kai" class="social-icon" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://api.whatsapp.com/send?phone=+27764902903" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.linkedin.com/in/khanya-jara" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </section>

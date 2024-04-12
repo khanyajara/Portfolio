@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sort a HTML Table Alphabetically</title>
+<style > 
+body{
+    
+    background-color: aqua;
+    color: black;
+}
+
+
+
+.paragraph{
+    text-align: center;
+    padding: 100px 0;
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 350px;
+
+}
+
+
+
+
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 45px;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+  position: center;
+}
+
+tr:nth-child(even) {
+  background-color: whitesmoke;
+  background-image: url('C:\Users\mphoj\Pictures\Saved Pictures\assessment 1.jpg');
+}
+
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: red;
+  padding: 2px;
+  position: center;
+  left: 0;
+  bottom: 0;
+  
+}
+
+</style>
+</head>
+<body>
+
+    <h1>About Khanya Jara</h1>
+<p class="paragraph">Hello, I'm Khanya Jara, and I'm passionate about exploring the realms of technology and innovation. I've always found the evolution of technology fascinating, and it's this intrigue that led me to embark on a journey into coding. Currently enrolled in a coding bootcamp, I'm dedicated to mastering essential skills that will pave my way into the realm of web development.</p>
+
+<p class="paragraph">My fascination with technology isn't just limited to its advancements; it's about understanding how it can shape our world and create meaningful solutions. Through this coding bootcamp experience, I aim to acquire the proficiency necessary to contribute effectively in the ever-evolving tech industry.</p>
+
+<p class="paragraph">Throughout my coding journey, I've encountered numerous challenges and roadblocks, each of which has been an opportunity for growth and learning. I've learned firsthand the importance of perseverance and problem-solving, skills that I believe are integral for success in any tech-related field.</p>
+
+<p class="paragraph">As I continue to immerse myself in the world of coding, I'm excited about the possibilities that lie ahead and the impact I can make through innovative solutions and creative endeavors.</p>
+
+<p>Click the button to sort the table alphabetically, by name:</p>
+<p><button onclick="sortTable()">Sort</button></p>
+
+<table id="myTable">
+  <tr>
+    <th>Education and skills</th>
+    <th>level</th>
+    <th>year</th>
+  </tr>
+  <tr>
+    <td>Kimberley Technical High School </td>
+    <td>Matric(Class of 2020)</td>
+    <td>2020</td>
+  </tr>
+  <tr>
+    <td>building civil and technology</td>
+    <td>N1-N3</td>
+    <td>2022-2023</td>
+  </tr>
+   <tr>
+    <td>training (IOT)</td>
+    <td>still busy</td>
+    <td>2024</td>
+   </tr>  
+</table>
+
+<footer class="footer">
+    <p>&copy; 2024 Khanya Jara. All Rights Reserved.</p>
+</footer>
+
+
+
+</body>
+</html>
