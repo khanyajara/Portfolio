@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -16,7 +17,7 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+ 
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -48,25 +49,30 @@ input[type=submit]:hover {
   
 }
 
+.error {
+  color: red;
+}
 </style>
 </head>
 <body>
 
-<h3>Contact Form</h3>
+<h3 class="heading">Contact Form</h3>
 
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name and last name </label>
-    <input type="text" id="fname+lname" name="firstname+lastname" placeholder="enter firstname  and last name..">
+  <form id="contactForm" action="https://formspree.io/f/xayraebk" method="post">
+    <label for="fname">First Name and Last Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Enter your first name..">
 
-    <label for="Email">Email </label>
-    <input type="text" id="email" name="Email Address" placeholder="example@gmail.com..">
+    <label for="Email">Email</label>
+    <input type="text" id="email" name="email" placeholder="example@gmail.com..">
 
-    <label for="phonenumber">Cell number</label>
-    <input type="text" id="Cellnumber" name="CellPhone Number" placeholder="enter contact info">
+    <label for="phonenumber">Cell Number</label>
+    <input type="text" id="cellnumber" name="cellphone" placeholder="Enter your cell number..">
 
     <label for="city">City</label>
     <select id="city" name="city">
+      <option value=""></option>
+      <option value="Pietermaritzburg">Pietermaritzburg</option>
       <option value="cape town">Cape Town</option>
       <option value="kimberley">Kimberley</option>
       <option value="bloemfontein">Bloemfontein</option>
@@ -78,14 +84,51 @@ input[type=submit]:hover {
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
+    <p id="error" class="error"></p>
   </form>
 </div>
 
+<script>
+function validateForm() {
+  var fname = document.getElementById("fname").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var cellnumber = document.getElementById("cellnumber").value.trim();
+  var city = document.getElementById("city").value;
+  var subject = document.getElementById("subject").value.trim();
+  var error = document.getElementById("error");
+  
+  if (fname === "" || email === "" || cellnumber === "" || subject === "") {
+    showError("Please fill out all required fields");
+    return false;
+  }
+  
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    showError("Please enter a valid email address");
+    return false;
+  }
+  
+  var phonePattern = /^\d{10}$/;
+  if (!phonePattern.test(cellnumber)) {
+    showError("Please enter a valid cell number (10 digits)");
+    return false;
+  }
+  
+  error.innerHTML = "";
+  return true;
+}
 
-<section class="address">
-    <p>Home Address: <a href="https://www.google.com/maps?q=7835+Moshe+Kantani+Ave,+Redirile,+Galeshewe,+8332" target="_blank">7835 Moshe Kantani Ave, Redirile, Galeshewe, 8332</a></p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.8397810204343!2d24.746787814063678!3d-28.759238679168158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eac50c52b2a11ab%3A0x8cd1d91b11f83f64!2s7835%20Moshe%20Kantani%20Ave%2C%20Redirile%2C%20Galeshewe%2C%208332!5e0!3m2!1sen!2sza!4v1649228592790!5m2!1sen!2sza" width="5cm" height="3cm" style="border:0; position: fixed; bottom: 20px; right: 20px;" allowfullscreen="" loading="lazy"></iframe>
-</section>
+function showError(message) {
+  var error = document.getElementById("error");
+  error.innerHTML = message;
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event){
+  if (!validateForm()) {
+    event.preventDefault();
+  }
+});
+</script>
 
 <footer class="footer">
     <p>&copy; 2024 Khanya Jara. All Rights Reserved.</p>
